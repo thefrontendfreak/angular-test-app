@@ -1,0 +1,29 @@
+<!-- Header start -->
+<header class="header">
+    <div class="container d__flex jc__between ai__center">
+        <div class="header__left">
+            <span class="header__logo pl__30">
+                <img src="assets/img/logo.png" alt="Logo" class="logo">
+            </span>
+        </div>
+        <div class="header__toggleButton" id="toggle" (click)="menuhandler()" [ngClass]="{'active': showMObileMenu}">
+            <div class="toggleButton__line"></div>
+            <div class="toggleButton__line"></div>
+            <div class="toggleButton__line"></div>
+        </div>
+        <div class="header__nav d__flex ai__center">
+            <ul class="header__navMenu" [ngClass]="{'showMenu': showMObileMenu}">
+                <li class="header__navMenuItems">
+                    <span>Universities</span>
+                </li>
+                <li class="header__navMenuItems">
+                    <span>Countries</span>
+                </li>
+                <li class="header__navMenuItems">
+                    <span>Ivy League</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</header>
+<!-- Header ends -->

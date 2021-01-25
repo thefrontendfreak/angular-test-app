@@ -1,0 +1,113 @@
+// Header style
+.header{
+  padding: 25px 0;
+  .container{
+    position: relative;
+    @media screen and (max-width:995px) {
+      padding: 0 20px;
+    }
+  }
+  &__logo{
+    cursor: pointer;
+    margin-left: -15px;
+    @media screen and (max-width:768px) {
+      img{
+        width: 180px;
+      }
+      margin-left: -5px;
+    }
+  }
+  &__toggleButton{
+    display: none;
+    @media screen and (max-width:768px) {
+      position: absolute;
+      right: 20px;
+      top: -4px;
+      width: 43px;
+      height: 43px;
+      padding: 10px 7px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      div{
+        display: block;
+        width: 100%;
+        height: 1.5px;
+        background:#FF3E30;;
+        transition: .3s;
+      }
+      &.active{
+        div{
+          &:nth-child(1){
+            transform: translateY(12px) rotate(45deg);
+          }
+          &:nth-child(2){
+            transform: translateX(10px);
+            opacity: 0;
+          }
+          &:nth-child(3){
+            transform: translateY(-10px) rotate(-45deg);
+          }
+        }
+      }
+    }
+  }
+  &__navMenu{
+    margin-right: 50px;
+    li{
+      position: relative;
+      display: inline-block;
+      &:not(:last-child){
+        margin-right: 50px;
+      }
+      span{
+        font-size: 18;
+        font-weight: 500;
+        color: #626161;
+        cursor: pointer;
+      }
+      &:before{
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 1px;
+        background: #FF3E30;
+        bottom: -3px;
+        transform-origin: right;
+        transform: scaleX(0);
+        transition: transform .3s;
+      }
+      &:hover{
+        &:before{
+          transform: scaleX(1);
+          transform-origin: left;
+        }
+      }
+    }
+    @media screen and (max-width:768px) {
+      position: absolute;
+      top: 0;
+      left: 0;
+      flex-direction: column;
+      width: 280px;
+      height: 100vh;
+      background: #fff;
+      z-index: 999;
+      padding: 30px;
+      transform: translateX(-100%);
+      transition: .5s;
+      &.showMenu{
+        transform: translateX(0);
+      }
+      li{
+        display: block;
+        margin-right: 0;
+        margin-bottom: 20px;
+      }
+    }
+  }
+}
+  
